@@ -7,41 +7,31 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-slate-950 text-slate-100 font-sans">
+<body class="bg-slate-100 text-slate-800 font-sans">
 
-  <!-- HERO -->
-  <header class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-cyan-500/20 to-green-500/30 blur-3xl"></div>
-
-    <div class="relative max-w-6xl mx-auto px-6 py-20 flex flex-col items-center text-center">
+  <!-- HEADER -->
+  <header class="bg-white border-b">
+    <div class="max-w-6xl mx-auto px-6 py-12 text-center">
       <img 
-        src="https://i.postimg.cc/Nfr3gkDn/195683296.jpg" 
-        alt="Tiago Santini" 
-        class="w-32 h-32 rounded-full border-4 border-blue-500 shadow-xl mb-6"
+        src="https://i.postimg.cc/Nfr3gkDn/195683296.jpg"
+        alt="Tiago Santini"
+        class="w-28 h-28 mx-auto rounded-full border shadow mb-4"
       />
 
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
+      <h1 class="text-3xl font-bold tracking-tight">
         Tiago Santini da Silva
       </h1>
 
-      <p class="mt-4 text-lg text-slate-300 max-w-xl">
-        Desenvolvedor Full Stack focado em criar soluções modernas, eficientes
-        e escaláveis para web e mobile.
+      <p class="mt-2 text-slate-600">
+        Desenvolvedor Full Stack • React • Node • TypeScript • MongoDB
       </p>
-
-      <div class="mt-6 flex gap-4 flex-wrap justify-center">
-        <span class="px-4 py-1 rounded-full bg-blue-600/20 text-blue-400 text-sm">React</span>
-        <span class="px-4 py-1 rounded-full bg-green-600/20 text-green-400 text-sm">Node.js</span>
-        <span class="px-4 py-1 rounded-full bg-cyan-600/20 text-cyan-400 text-sm">MongoDB</span>
-        <span class="px-4 py-1 rounded-full bg-purple-600/20 text-purple-400 text-sm">TypeScript</span>
-      </div>
 
       <a 
         href="https://drive.google.com/file/d/1WUrCw5L1_kO5wduWKQAUwi8lDLMff3TH/view?usp=sharing"
         target="_blank"
-        class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg shadow-lg"
+        class="inline-block mt-6 px-6 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
       >
-        📄 Baixar Currículo
+        Baixar Currículo
       </a>
     </div>
   </header>
@@ -50,58 +40,56 @@
   <main class="max-w-6xl mx-auto px-6">
 
     <!-- SOBRE -->
-    <section class="py-20">
-      <h2 class="text-3xl font-bold mb-6 border-b border-slate-700 inline-block">
+    <section class="py-14">
+      <h2 class="text-2xl font-semibold mb-4 border-l-4 border-blue-600 pl-3">
         Sobre Mim
       </h2>
-      <p class="text-slate-300 max-w-3xl leading-relaxed">
-        Sou um desenvolvedor Full Stack apaixonado por tecnologia e inovação.
-        Tenho experiência com aplicações web modernas utilizando React,
-        Node.js, MongoDB e TypeScript, sempre buscando boas práticas,
-        performance e código limpo.
+
+      <p class="text-slate-600 max-w-3xl leading-relaxed">
+        Desenvolvedor Full Stack com foco em aplicações modernas e escaláveis.
+        Experiência com React, Node.js, TypeScript e MongoDB, sempre buscando
+        boas práticas, clareza de código e performance.
       </p>
     </section>
 
     <!-- PROJETOS -->
-    <section class="py-20">
-      <h2 class="text-3xl font-bold mb-10 border-b border-slate-700 inline-block">
+    <section class="py-14">
+      <h2 class="text-2xl font-semibold mb-8 border-l-4 border-blue-600 pl-3">
         Projetos
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Card -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- CARD -->
         <a href="https://github.com/seuusuario/app-nutricao" target="_blank"
-           class="group bg-slate-900 border border-slate-800 rounded-xl p-6 hover:-translate-y-2 hover:border-blue-500 transition-all">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2 group-hover:text-blue-300">
+           class="bg-white border rounded-lg p-6 hover:shadow-md transition">
+          <h3 class="text-lg font-semibold text-blue-600 mb-2">
             App de Nutrição
           </h3>
-          <p class="text-slate-400">
-            Aplicativo para controle de ingestão nutricional, com dashboard,
-            autenticação e integração backend.
+          <p class="text-slate-600">
+            Aplicação web para controle nutricional com React e Node.js.
           </p>
         </a>
 
-        <!-- Card -->
+        <!-- CARD -->
         <a href="https://github.com/seuusuario/sistema-meteorologico" target="_blank"
-           class="group bg-slate-900 border border-slate-800 rounded-xl p-6 hover:-translate-y-2 hover:border-cyan-500 transition-all">
-          <h3 class="text-xl font-semibold text-cyan-400 mb-2">
+           class="bg-white border rounded-lg p-6 hover:shadow-md transition">
+          <h3 class="text-lg font-semibold text-blue-600 mb-2">
             Sistema Meteorológico
           </h3>
-          <p class="text-slate-400">
-            Sistema de coleta e visualização de dados climáticos em tempo real.
+          <p class="text-slate-600">
+            Sistema para coleta e visualização de dados climáticos.
           </p>
         </a>
 
-        <!-- Card -->
+        <!-- CARD -->
         <a href="#" target="_blank"
-           class="group bg-slate-900 border border-slate-800 rounded-xl p-6 hover:-translate-y-2 hover:border-green-500 transition-all">
-          <h3 class="text-xl font-semibold text-green-400 mb-2">
+           class="bg-white border rounded-lg p-6 hover:shadow-md transition">
+          <h3 class="text-lg font-semibold text-blue-600 mb-2">
             BioAlert
           </h3>
-          <p class="text-slate-400">
-            Aplicativo IoT para detecção automática de quedas com foco em saúde
-            e segurança.
+          <p class="text-slate-600">
+            Aplicativo focado na detecção automática de quedas.
           </p>
         </a>
 
@@ -109,30 +97,31 @@
     </section>
 
     <!-- CONTATO -->
-    <section class="py-20">
-      <h2 class="text-3xl font-bold mb-8 border-b border-slate-700 inline-block">
+    <section class="py-14">
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-600 pl-3">
         Contato
       </h2>
 
-      <p class="text-slate-300 mb-6">
-        📧 <a href="mailto:tiago.santini06@gmail.com" class="text-blue-400 underline">
+      <p class="text-slate-600 mb-6">
+        Email: 
+        <a href="mailto:tiago.santini06@gmail.com" class="text-blue-600 underline">
           tiago.santini06@gmail.com
         </a>
       </p>
 
       <div class="flex flex-wrap gap-4">
         <a href="https://linkedin.com/in/tiago-santini-da-silva-b545752a6" target="_blank"
-           class="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition">
+           class="px-5 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition">
           LinkedIn
         </a>
 
         <a href="https://github.com/TiagoSan77" target="_blank"
-           class="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 transition">
+           class="px-5 py-2 rounded-md bg-slate-800 text-white hover:bg-slate-900 transition">
           GitHub
         </a>
 
         <a href="https://tiagosan77.github.io/portfolio/" target="_blank"
-           class="px-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 transition">
+           class="px-5 py-2 rounded-md bg-slate-600 text-white hover:bg-slate-700 transition">
           Segundo Portfólio
         </a>
       </div>
@@ -141,8 +130,10 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-800 py-6 text-center text-slate-500 text-sm">
-    © 2025 — Tiago Santini da Silva
+  <footer class="bg-white border-t">
+    <p class="text-center text-slate-500 py-4 text-sm">
+      © 2025 · Tiago Santini da Silva
+    </p>
   </footer>
 
 </body>
