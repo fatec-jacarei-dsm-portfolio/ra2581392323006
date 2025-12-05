@@ -1,234 +1,181 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio | Tiago Santini</title>
-
+  <title>Portfólio - TIAGO SANTINI DA SILVA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
     body {
-      background: #f1f5f9; /* slate-100 */
-      color: #1e293b;      /* slate-800 */
+      font-family: 'Poppins', sans-serif;
     }
-
-    /* LAYOUT */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 24px;
+    
+    /* Paleta baseada em azul escuro */
+    :root {
+      --primary-dark: #0d1b2a;     /* Azul escuro quase preto */
+      --primary-blue: #1b263b;     /* Azul escuro */
+      --secondary-blue: #415a77;   /* Azul médio */
+      --light-blue: #778da9;       /* Azul claro */
+      --accent-blue: #219ebc;      /* Azul acento */
+      --highlight-blue: #8ecae6;   /* Azul destaque */
+      --off-white: #e0e1dd;        /* Branco suave */
     }
-
-    header, footer {
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 50%, var(--secondary-blue) 100%);
     }
-
-    footer {
-      border-top: 1px solid #e2e8f0;
-      border-bottom: none;
+    
+    .card-hover {
+      transition: all 0.3s ease;
     }
-
-    section {
-      padding: 56px 0;
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
-
-    /* HEADER */
-    header .container {
-      text-align: center;
-      padding: 80px 24px;
+    
+    .text-gradient {
+      background: linear-gradient(90deg, var(--highlight-blue) 0%, var(--accent-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-
-    header img {
-      width: 112px;
-      height: 112px;
-      border-radius: 50%;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-    }
-
-    header p {
-      margin-top: 8px;
-      color: #475569; /* slate-600 */
-    }
-
-    /* BOTÕES */
-    .btn {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 10px 24px;
-      background: #2563eb; /* blue-600 */
-      color: #ffffff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.2s ease;
-    }
-
-    .btn:hover {
-      background: #1d4ed8; /* blue-700 */
-    }
-
-    /* TITULOS SEÇÃO */
-    h2 {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 24px;
-      padding-left: 12px;
-      border-left: 4px solid #2563eb; /* blue-600 */
-    }
-
-    p {
-      color: #475569;
-      line-height: 1.7;
-    }
-
-    /* PROJETOS */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 24px;
-      text-decoration: none;
-      transition: box-shadow 0.2s ease, transform 0.2s ease;
-      color: inherit;
-    }
-
-    .card:hover {
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transform: translateY(-3px);
-    }
-
-    .card h3 {
-      color: #2563eb;
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    /* CONTATO */
-    .links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .links a {
-      padding: 10px 20px;
-      border-radius: 6px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.2s ease;
-    }
-
-    .linkedin { background: #2563eb; }
-    .linkedin:hover { background: #1d4ed8; }
-
-    .github { background: #1e293b; }
-    .github:hover { background: #020617; }
-
-    .portfolio { background: #475569; }
-    .portfolio:hover { background: #334155; }
-
-    footer p {
-      text-align: center;
-      color: #64748b;
-      font-size: 14px;
-      padding: 16px;
+    
+    /* Garantir que todas as cores apareçam */
+    * {
+      color-scheme: dark;
     }
   </style>
 </head>
 
-<body>
-
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <img src="https://i.postimg.cc/Nfr3gkDn/195683296.jpg" alt="Tiago Santini">
-      <h1>Tiago Santini da Silva</h1>
-      <p>Desenvolvedor Full Stack • React • Node • TypeScript • MongoDB</p>
-
-      <a class="btn" href="https://drive.google.com/file/d/1WUrCw5L1_kO5wduWKQAUwi8lDLMff3TH/view?usp=sharing" target="_blank">
-        Baixar Currículo
+<body class="gradient-bg text-white">
+  <!-- Header -->
+  <header class="bg-[#0d1b2a] shadow-xl border-b border-[#1b263b]">
+    <div class="max-w-6xl mx-auto p-6 flex flex-col items-center text-center">
+      <img src="https://i.postimg.cc/Nfr3gkDn/195683296.jpg" alt="Foto de Tiago"
+        class="w-36 h-36 rounded-full shadow-lg mb-6 border-4 border-[#219ebc]" />
+      <h1 class="text-4xl font-bold text-[#8ecae6] mb-2">TIAGO SANTINI DA SILVA</h1>
+      <p class="text-[#778da9] text-lg mb-6 font-medium">Desenvolvedor Full Stack | React • Node • MongoDB</p>
+      <a href="https://drive.google.com/file/d/1WUrCw5L1_kO5wduWKQAUwi8lDLMff3TH/view?usp=sharing" download
+        class="bg-gradient-to-r from-[#219ebc] to-[#8ecae6] text-[#0d1b2a] px-8 py-4 rounded-xl font-bold hover:from-[#8ecae6] hover:to-[#219ebc] transition-all duration-300 shadow-lg hover:shadow-xl text-lg">
+        📄 Baixar Currículo
       </a>
     </div>
   </header>
 
-  <main class="container">
-
-    <!-- SOBRE -->
-    <section>
-      <h2>Sobre Mim</h2>
-      <p>
-        Desenvolvedor Full Stack com foco em aplicações modernas e escaláveis.
-        Experiência com React, Node.js, TypeScript e MongoDB, sempre buscando
-        boas práticas, clareza de código e performance.
+  <!-- Main content -->
+  <main class="max-w-6xl mx-auto p-6">
+    <!-- Sobre Mim -->
+    <section class="my-10 bg-[#1b263b] p-8 rounded-2xl shadow-2xl card-hover border border-[#415a77]">
+      <h2 class="text-3xl font-bold text-[#8ecae6] mb-6 pb-3 border-b-2 border-[#219ebc]">Sobre Mim</h2>
+      <p class="text-[#e0e1dd] text-lg leading-relaxed">
+        Sou um desenvolvedor apaixonado por tecnologia e criação de soluções web. 
+        Tenho experiência com desenvolvimento Full Stack utilizando React, Node.js, TypeScript e MongoDB.
       </p>
     </section>
 
-    <!-- PROJETOS -->
-    <section>
-      <h2>Projetos</h2>
-
-      <div class="projects">
-        <a class="card" href="#">
-          <h3>App de Nutrição</h3>
-          <p>Aplicação web para controle nutricional com React e Node.js.</p>
+    <!-- Projetos -->
+    <section class="my-10 bg-[#1b263b] p-8 rounded-2xl shadow-2xl card-hover border border-[#415a77]">
+      <h2 class="text-3xl font-bold text-[#8ecae6] mb-8 pb-3 border-b-2 border-[#219ebc]">Projetos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Projeto 1 -->
+        <a href="https://github.com/seuusuario/app-nutricao" target="_blank"
+          class="bg-[#0d1b2a] p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 block border border-[#415a77] card-hover group">
+          <div class="mb-4 h-12 w-12 rounded-lg bg-gradient-to-br from-[#219ebc] to-[#8ecae6] flex items-center justify-center">
+            <span class="text-2xl">📱</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#8ecae6] mb-3 group-hover:text-[#219ebc] transition-colors">App de Nutrição</h3>
+          <p class="text-[#e0e1dd] mb-4">Aplicativo para controle de ingestão de nutrientes com React e Node.js.</p>
+          <span class="inline-flex items-center text-[#219ebc] font-semibold group-hover:text-[#8ecae6] transition-colors">
+            Ver Projeto →
+          </span>
         </a>
 
-        <a class="card" href="#">
-          <h3>Sistema Meteorológico</h3>
-          <p>Sistema para coleta e visualização de dados climáticos.</p>
+        <!-- Projeto 2 -->
+        <a href="https://github.com/seuusuario/sistema-meteorologico" target="_blank"
+          class="bg-[#0d1b2a] p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 block border border-[#415a77] card-hover group">
+          <div class="mb-4 h-12 w-12 rounded-lg bg-gradient-to-br from-[#219ebc] to-[#8ecae6] flex items-center justify-center">
+            <span class="text-2xl">🌤️</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#8ecae6] mb-3 group-hover:text-[#219ebc] transition-colors">Sistema Meteorológico</h3>
+          <p class="text-[#e0e1dd] mb-4">Software para visualização e ingestão de dados climáticos.</p>
+          <span class="inline-flex items-center text-[#219ebc] font-semibold group-hover:text-[#8ecae6] transition-colors">
+            Ver Projeto →
+          </span>
         </a>
 
-        <a class="card" href="#">
-          <h3>BioAlert</h3>
-          <p>Aplicativo focado na detecção automática de quedas.</p>
+        <!-- Projeto 3 -->
+        <a href="https://github.com/seuusuario/sistema-meteorologico" target="_blank"
+          class="bg-[#0d1b2a] p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 block border border-[#415a77] card-hover group">
+          <div class="mb-4 h-12 w-12 rounded-lg bg-gradient-to-br from-[#219ebc] to-[#8ecae6] flex items-center justify-center">
+            <span class="text-2xl">⚠️</span>
+          </div>
+          <h3 class="text-xl font-bold text-[#8ecae6] mb-3 group-hover:text-[#219ebc] transition-colors">BioAlert</h3>
+          <p class="text-[#e0e1dd] mb-4">Aplicativo capaz de detectar quedas utilizando sensores e IA.</p>
+          <div class="flex items-center gap-3">
+            <span class="text-xs bg-[#219ebc] text-[#0d1b2a] px-3 py-1 rounded-full font-bold">NOVO</span>
+            <span class="inline-flex items-center text-[#219ebc] font-semibold group-hover:text-[#8ecae6] transition-colors">
+              Ver Projeto →
+            </span>
+          </div>
         </a>
       </div>
     </section>
 
-    <!-- CONTATO -->
-    <section>
-      <h2>Contato</h2>
-      <p>
-        Email:
-        <a href="mailto:tiago.santini06@gmail.com" style="color:#2563eb;">
+    <!-- Contato -->
+    <section class="my-10 bg-[#1b263b] p-8 rounded-2xl shadow-2xl card-hover border border-[#415a77]">
+      <h2 class="text-3xl font-bold text-[#8ecae6] mb-8 pb-3 border-b-2 border-[#219ebc]">Contato</h2>
+      <div class="mb-10">
+        <p class="text-[#e0e1dd] text-lg mb-2">Entre em contato:</p>
+        <a href="mailto:tiago.santini06@gmail.com" 
+           class="text-2xl font-bold text-gradient hover:opacity-90 transition-opacity">
           tiago.santini06@gmail.com
         </a>
-      </p>
+      </div>
 
-      <div class="links">
-        <a class="linkedin" href="https://linkedin.com/in/tiago-santini-da-silva-b545752a6" target="_blank">LinkedIn</a>
-        <a class="github" href="https://github.com/TiagoSan77" target="_blank">GitHub</a>
-        <a class="portfolio" href="https://tiagosan77.github.io/portfolio/" target="_blank">Segundo Portfólio</a>
+      <!-- Botões LinkedIn, GitHub e Segundo Portfólio -->
+      <div class="mt-8 flex flex-wrap gap-6 justify-center">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/tiago-santini-da-silva-b545752a6" target="_blank"
+          class="flex items-center space-x-3 bg-gradient-to-r from-[#0077b5] to-[#00a0dc] text-white px-8 py-4 rounded-xl hover:shadow-2xl transition-all duration-300 font-bold shadow-lg group">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.967 0-1.75-.785-1.75-1.75s.783-1.75 1.75-1.75 1.75.785 1.75 1.75-.783 1.75-1.75 1.75zm13.5 11.27h-3v-5.5c0-1.38-1.121-2.5-2.5-2.5s-2.5 1.12-2.5 2.5v5.5h-3v-10h3v1.53c.59-.898 1.635-1.53 2.75-1.53 2.206 0 4 1.794 4 4v5.97z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/TiagoSan77" target="_blank"
+          class="flex items-center space-x-3 bg-gradient-to-r from-[#333] to-[#24292e] text-white px-8 py-4 rounded-xl hover:shadow-2xl transition-all duration-300 font-bold shadow-lg group">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0.297c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.304.762-1.604-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.49 11.49 0 013.003-.404c1.018.005 2.042.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.654 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.922.43.37.823 1.102.823 2.222v3.293c0 .319.218.694.825.576 4.765-1.585 8.2-6.082 8.2-11.384 0-6.627-5.373-12-12-12z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Segundo Portfólio -->
+        <a href="https://tiagosan77.github.io/portfolio/" target="_blank"
+          class="flex items-center space-x-3 bg-gradient-to-r from-[#219ebc] to-[#8ecae6] text-[#0d1b2a] px-8 py-4 rounded-xl hover:shadow-2xl transition-all duration-300 font-bold shadow-lg group">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+          <span>Segundo Portfólio</span>
+        </a>
       </div>
     </section>
-
   </main>
 
-  <footer>
-    <p>© 2025 · Tiago Santini da Silva</p>
+  <!-- Footer -->
+  <footer class="bg-[#0d1b2a] text-center py-8 border-t border-[#1b263b]">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-[#778da9] mb-4">&copy; 2025 Tiago Santini da Silva. Todos os direitos reservados.</p>
+      <p class="text-[#415a77] text-sm">Desenvolvido com ❤️ e código limpo</p>
+    </div>
   </footer>
-
 </body>
+
 </html>
