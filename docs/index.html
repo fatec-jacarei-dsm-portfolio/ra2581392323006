@@ -4,21 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio | Tiago Santini</title>
+
+  <!-- Configura cor "primary" antes do Tailwind CDN (importante) -->
+  <script>
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0b76d1' /* azul profissional - altere se quiser outro tom */
+            }
+          }
+        }
+      }
+    }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-slate-100 text-slate-800 font-sans">
+<body class="bg-slate-100 text-slate-800 font-sans antialiased">
+
+  <!-- TOP ACCENT -->
+  <div class="h-1 bg-primary"></div>
 
   <!-- HEADER -->
-  <header class="bg-white border-b">
+  <header class="bg-white border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-6 py-12 text-center">
       <img 
         src="https://i.postimg.cc/Nfr3gkDn/195683296.jpg"
         alt="Tiago Santini"
-        class="w-28 h-28 mx-auto rounded-full border shadow mb-4"
+        class="w-28 h-28 mx-auto rounded-full border shadow-sm mb-4"
       />
 
-      <h1 class="text-3xl font-bold tracking-tight">
+      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900">
         Tiago Santini da Silva
       </h1>
 
@@ -29,7 +48,7 @@
       <a 
         href="https://drive.google.com/file/d/1WUrCw5L1_kO5wduWKQAUwi8lDLMff3TH/view?usp=sharing"
         target="_blank"
-        class="inline-block mt-6 px-6 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+        class="inline-block mt-6 px-6 py-2 rounded-md bg-primary text-white hover:brightness-95 shadow-sm transition"
       >
         Baixar Currículo
       </a>
@@ -41,7 +60,7 @@
 
     <!-- SOBRE -->
     <section class="py-14">
-      <h2 class="text-2xl font-semibold mb-4 border-l-4 border-blue-600 pl-3">
+      <h2 class="text-2xl font-semibold mb-4 pl-3 border-l-4 border-primary">
         Sobre Mim
       </h2>
 
@@ -54,7 +73,7 @@
 
     <!-- PROJETOS -->
     <section class="py-14">
-      <h2 class="text-2xl font-semibold mb-8 border-l-4 border-blue-600 pl-3">
+      <h2 class="text-2xl font-semibold mb-8 pl-3 border-l-4 border-primary">
         Projetos
       </h2>
 
@@ -62,8 +81,8 @@
 
         <!-- CARD -->
         <a href="https://github.com/seuusuario/app-nutricao" target="_blank"
-           class="bg-white border rounded-lg p-6 hover:shadow-md transition">
-          <h3 class="text-lg font-semibold text-blue-600 mb-2">
+           class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
+          <h3 class="text-lg font-semibold text-primary mb-2">
             App de Nutrição
           </h3>
           <p class="text-slate-600">
@@ -73,8 +92,8 @@
 
         <!-- CARD -->
         <a href="https://github.com/seuusuario/sistema-meteorologico" target="_blank"
-           class="bg-white border rounded-lg p-6 hover:shadow-md transition">
-          <h3 class="text-lg font-semibold text-blue-600 mb-2">
+           class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
+          <h3 class="text-lg font-semibold text-primary mb-2">
             Sistema Meteorológico
           </h3>
           <p class="text-slate-600">
@@ -84,8 +103,8 @@
 
         <!-- CARD -->
         <a href="#" target="_blank"
-           class="bg-white border rounded-lg p-6 hover:shadow-md transition">
-          <h3 class="text-lg font-semibold text-blue-600 mb-2">
+           class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
+          <h3 class="text-lg font-semibold text-primary mb-2">
             BioAlert
           </h3>
           <p class="text-slate-600">
@@ -98,20 +117,20 @@
 
     <!-- CONTATO -->
     <section class="py-14">
-      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-600 pl-3">
+      <h2 class="text-2xl font-semibold mb-6 pl-3 border-l-4 border-primary">
         Contato
       </h2>
 
       <p class="text-slate-600 mb-6">
         Email: 
-        <a href="mailto:tiago.santini06@gmail.com" class="text-blue-600 underline">
+        <a href="mailto:tiago.santini06@gmail.com" class="text-primary underline">
           tiago.santini06@gmail.com
         </a>
       </p>
 
       <div class="flex flex-wrap gap-4">
         <a href="https://linkedin.com/in/tiago-santini-da-silva-b545752a6" target="_blank"
-           class="px-5 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition">
+           class="px-5 py-2 rounded-md bg-primary text-white hover:brightness-95 transition">
           LinkedIn
         </a>
 
