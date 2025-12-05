@@ -5,154 +5,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio | Tiago Santini</title>
 
-  <!-- Configura cor "primary" antes do Tailwind CDN (importante) -->
-  <script>
-    tailwind = {
-      config: {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#0b76d1' /* azul profissional - altere se quiser outro tom */
-            }
-          }
-        }
+  <!-- CSS PURO (não quebra no GitHub Pages) -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(90deg, #3b82f6, #14b8a6, #22c55e);
+      color: #fff;
+    }
+
+    header, section, footer {
+      background: rgba(255, 255, 255, 0.92);
+      color: #1e293b;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 32px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    header {
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #1e40af;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      border-bottom: 3px solid #3b82f6;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 5px solid #3b82f6;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      color: #1d4ed8;
+      margin-bottom: 6px;
+    }
+
+    .contact-links a {
+      margin-right: 12px;
+      text-decoration: none;
+      color: #fff;
+      background: #2563eb;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .contact-links a.github {
+      background: #0f172a;
+    }
+
+    .contact-links a.portfolio {
+      background: #16a34a;
+    }
+
+    .contact-links a:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      color: #475569;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header, section {
+        margin: 20px;
+        padding: 24px;
       }
     }
-  </script>
-
-  <script src="https://cdn.tailwindcss.com"></script>
+  </style>
 </head>
 
-<body class="bg-slate-100 text-slate-800 font-sans antialiased">
-
-  <!-- TOP ACCENT -->
-  <div class="h-1 bg-primary"></div>
+<body>
 
   <!-- HEADER -->
-  <header class="bg-white border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-6 py-12 text-center">
-      <img 
-        src="https://i.postimg.cc/Nfr3gkDn/195683296.jpg"
-        alt="Tiago Santini"
-        class="w-28 h-28 mx-auto rounded-full border shadow-sm mb-4"
-      />
+  <header>
+    <img src="https://i.postimg.cc/Nfr3gkDn/195683296.jpg" alt="Tiago Santini">
+    <h1>Tiago Santini da Silva</h1>
+    <p>Desenvolvedor Full Stack • React • Node • TypeScript • MongoDB</p>
 
-      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900">
-        Tiago Santini da Silva
-      </h1>
-
-      <p class="mt-2 text-slate-600">
-        Desenvolvedor Full Stack • React • Node • TypeScript • MongoDB
-      </p>
-
-      <a 
-        href="https://drive.google.com/file/d/1WUrCw5L1_kO5wduWKQAUwi8lDLMff3TH/view?usp=sharing"
-        target="_blank"
-        class="inline-block mt-6 px-6 py-2 rounded-md bg-primary text-white hover:brightness-95 shadow-sm transition"
-      >
-        Baixar Currículo
-      </a>
-    </div>
+    <a class="btn" href="https://drive.google.com/file/d/1WUrCw5L1_kO5wduWKQAUwi8lDLMff3TH/view?usp=sharing" target="_blank">
+      📄 Baixar Currículo
+    </a>
   </header>
 
-  <!-- MAIN -->
-  <main class="max-w-6xl mx-auto px-6">
+  <!-- SOBRE -->
+  <section>
+    <h2>Sobre Mim</h2>
+    <p>
+      Desenvolvedor apaixonado por tecnologia e criação de soluções web.
+      Experiência com React, Node.js, TypeScript e MongoDB, sempre focando
+      em código limpo, performance e boas práticas.
+    </p>
+  </section>
 
-    <!-- SOBRE -->
-    <section class="py-14">
-      <h2 class="text-2xl font-semibold mb-4 pl-3 border-l-4 border-primary">
-        Sobre Mim
-      </h2>
+  <!-- PROJETOS -->
+  <section>
+    <h2>Projetos</h2>
 
-      <p class="text-slate-600 max-w-3xl leading-relaxed">
-        Desenvolvedor Full Stack com foco em aplicações modernas e escaláveis.
-        Experiência com React, Node.js, TypeScript e MongoDB, sempre buscando
-        boas práticas, clareza de código e performance.
-      </p>
-    </section>
+    <div class="projects">
+      <a class="card" href="#" target="_blank">
+        <h3>App de Nutrição</h3>
+        <p>Aplicativo para controle de ingestão de nutrientes com React e Node.js.</p>
+      </a>
 
-    <!-- PROJETOS -->
-    <section class="py-14">
-      <h2 class="text-2xl font-semibold mb-8 pl-3 border-l-4 border-primary">
-        Projetos
-      </h2>
+      <a class="card" href="#" target="_blank">
+        <h3>Sistema Meteorológico</h3>
+        <p>Software de visualização e ingestão de dados climáticos.</p>
+      </a>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <a class="card" href="#" target="_blank">
+        <h3>BioAlert</h3>
+        <p>Aplicativo IoT capaz de detectar quedas automaticamente.</p>
+      </a>
+    </div>
+  </section>
 
-        <!-- CARD -->
-        <a href="https://github.com/seuusuario/app-nutricao" target="_blank"
-           class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
-          <h3 class="text-lg font-semibold text-primary mb-2">
-            App de Nutrição
-          </h3>
-          <p class="text-slate-600">
-            Aplicação web para controle nutricional com React e Node.js.
-          </p>
-        </a>
+  <!-- CONTATO -->
+  <section>
+    <h2>Contato</h2>
 
-        <!-- CARD -->
-        <a href="https://github.com/seuusuario/sistema-meteorologico" target="_blank"
-           class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
-          <h3 class="text-lg font-semibold text-primary mb-2">
-            Sistema Meteorológico
-          </h3>
-          <p class="text-slate-600">
-            Sistema para coleta e visualização de dados climáticos.
-          </p>
-        </a>
+    <p>Email: <strong>tiago.santini06@gmail.com</strong></p>
 
-        <!-- CARD -->
-        <a href="#" target="_blank"
-           class="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition transform hover:-translate-y-1">
-          <h3 class="text-lg font-semibold text-primary mb-2">
-            BioAlert
-          </h3>
-          <p class="text-slate-600">
-            Aplicativo focado na detecção automática de quedas.
-          </p>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section class="py-14">
-      <h2 class="text-2xl font-semibold mb-6 pl-3 border-l-4 border-primary">
-        Contato
-      </h2>
-
-      <p class="text-slate-600 mb-6">
-        Email: 
-        <a href="mailto:tiago.santini06@gmail.com" class="text-primary underline">
-          tiago.santini06@gmail.com
-        </a>
-      </p>
-
-      <div class="flex flex-wrap gap-4">
-        <a href="https://linkedin.com/in/tiago-santini-da-silva-b545752a6" target="_blank"
-           class="px-5 py-2 rounded-md bg-primary text-white hover:brightness-95 transition">
-          LinkedIn
-        </a>
-
-        <a href="https://github.com/TiagoSan77" target="_blank"
-           class="px-5 py-2 rounded-md bg-slate-800 text-white hover:bg-slate-900 transition">
-          GitHub
-        </a>
-
-        <a href="https://tiagosan77.github.io/portfolio/" target="_blank"
-           class="px-5 py-2 rounded-md bg-slate-600 text-white hover:bg-slate-700 transition">
-          Segundo Portfólio
-        </a>
-      </div>
-    </section>
-
-  </main>
+    <div class="contact-links" style="margin-top: 16px;">
+      <a href="https://linkedin.com/in/tiago-santini-da-silva-b545752a6" target="_blank">LinkedIn</a>
+      <a class="github" href="https://github.com/TiagoSan77" target="_blank">GitHub</a>
+      <a class="portfolio" href="https://tiagosan77.github.io/portfolio/" target="_blank">Segundo Portfólio</a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer class="bg-white border-t">
-    <p class="text-center text-slate-500 py-4 text-sm">
-      © 2025 · Tiago Santini da Silva
-    </p>
+  <footer>
+    © 2025 · Tiago Santini da Silva • Todos os direitos reservados
   </footer>
 
 </body>
